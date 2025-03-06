@@ -8,11 +8,11 @@ const CountdownTimer = () => {
   const navigate = useNavigate();
   const { width, height } = useWindowSize(); // Get screen size for Confetti
 
-  const targetDate = new Date("2025-03-06T00:00:00").getTime();
+  const targetDate = new Date("2025-03-13T00:00:00").getTime();
   const today = new Date();
   const [timeLeft, setTimeLeft] = useState(targetDate - Date.now());
   const [isCountdownOver, setIsCountdownOver] = useState(false);
-  const [isUnlocked, setIsUnlocked] = useState(today >= new Date("2025-03-03")); // Enable button from March 13 onward
+  const [isUnlocked, setIsUnlocked] = useState(today >= new Date("2025-03-13")); // Enable button from March 13 onward
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -89,7 +89,7 @@ const CountdownTimer = () => {
       ) : (
         // 🎉 Show birthday message when countdown ends
         <motion.div
-  className="text-3xl md:text-5xl lg:text-6xl font-bold text-center font-extrabold text-text-pink-600 mt-6"
+  className="text-3xl md:text-5xl lg:text-6xl font-bold text-center font-extrabold text-pink-600 mt-6"
   initial={{ opacity: 0, scale: 0.5 }}
   animate={{ opacity: 1, scale: window.innerWidth < 768 ? 1.1 : 1.5 }}
   transition={{ duration: 1 }}
