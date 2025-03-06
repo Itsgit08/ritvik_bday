@@ -46,7 +46,7 @@ const CountdownTimer = () => {
 
   return (
     <div
-      className="flex flex-col items-center justify-center min-h-screen text-white p-4 overflow-hidden bg-cover bg-center bg-contain bg-no-repeat"
+      className="flex flex-col items-center justify-center min-h-screen text-white p-4 overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/images/back5.jpeg')" }}
     >
       {/* 🎊 Show Confetti when countdown is over */}
@@ -61,7 +61,7 @@ const CountdownTimer = () => {
        animate={{ opacity: 1, y: 0 }}
        transition={{ duration: 1 }}
      >
-       🎂 THE COUNTDOWN HAS BEGUN 🎂
+       THE COUNTDOWN HAS BEGUN 
      </motion.h1>
      
       )}
@@ -107,7 +107,7 @@ const CountdownTimer = () => {
         onClick={handleButtonClick}
         disabled={!isUnlocked} // Disable button until March 13
       >
-        Click For more Surprises
+        Surprises
       </button>
     </div>
   );
