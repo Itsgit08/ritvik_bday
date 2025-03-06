@@ -8,7 +8,7 @@ const CountdownTimer = () => {
   const navigate = useNavigate();
   const { width, height } = useWindowSize(); // Get screen size for Confetti
 
-  const targetDate = new Date("2025-03-13T00:00:00").getTime();
+  const targetDate = new Date("2025-03-06T00:00:00").getTime();
   const today = new Date();
   const [timeLeft, setTimeLeft] = useState(targetDate - Date.now());
   const [isCountdownOver, setIsCountdownOver] = useState(false);
