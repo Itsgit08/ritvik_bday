@@ -89,13 +89,14 @@ const CountdownTimer = () => {
       ) : (
         // 🎉 Show birthday message when countdown ends
         <motion.div
-          className="text-3xl md:text-5xl lg:text-6xl font-bold text-center font-extrabold text-[#f1c40f] mt-6"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1.5 }}
-          transition={{ duration: 1 }}
-        >
-          🎉 HAPPY BIRTHDAY, Bubuu! 🎉
-        </motion.div>
+  className="text-3xl md:text-5xl lg:text-6xl font-bold text-center font-extrabold text-text-pink-600 mt-6"
+  initial={{ opacity: 0, scale: 0.5 }}
+  animate={{ opacity: 1, scale: window.innerWidth < 768 ? 1.1 : 1.5 }}
+  transition={{ duration: 1 }}
+>
+  HAPPY BIRTHDAY Bubuu
+</motion.div>
+
       )}
 
       {/* 🎁 Surprise Button (Enabled from March 13) */}
