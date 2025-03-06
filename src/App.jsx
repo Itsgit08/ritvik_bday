@@ -1,13 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CountdownTimer from "./components/CountDownTimer";
+import CountdownTimer from "./components/CountdownTimer";
 import SurprisePage from "./components/SurprisePage";
 import PhotoGallery from "./components/PhotoGallery"; 
 import Note from "./components/Note"; 
 import WishesList from "./components/WishesList";
-//import Auth from "./components/Auth";
-//import MessageForm from "./components/messageform";
-//import MessageList from "./components/message";
-
 
 function App() {
   return (
