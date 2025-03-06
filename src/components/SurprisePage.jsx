@@ -14,9 +14,10 @@ const gridItems = [
 const SurpriseGrid = () => {
   return (
     <div
-      className="min-h-screen w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-4 p-4 bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/back14.jpeg')" }}
-    >
+  className="min-h-screen w-full overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-4 p-4 bg-cover bg-center"
+  style={{ backgroundImage: "url('/images/back14.jpeg')" }}
+>
+
       {gridItems.map((item, index) => (
         <motion.div
           key={index}
