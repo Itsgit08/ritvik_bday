@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import useWindowSize from "react-use/lib/useWindowSize";
-import Confetti from "react-confetti"; // Import Confetti
+import Confetti from "react-confetti"; // 🎊 Confetti Import
 
 const CountdownTimer = () => {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const CountdownTimer = () => {
       setTimeLeft(remainingTime);
 
       if (remainingTime === 0) {
-        setIsCountdownOver(true); // Trigger Confetti
+        setIsCountdownOver(true); // 🎉 Confetti Trigger
         clearInterval(timer);
       }
     }, 1000);
@@ -40,36 +40,37 @@ const CountdownTimer = () => {
 
   const handleButtonClick = () => {
     if (isUnlocked) {
-      navigate("/surprise"); // Redirect to SurprisePage
+      navigate("/surprise"); // 🎁 Redirect to Surprise Page
     }
   };
 
   return (
     <div
-      className="flex flex-col items-center justify-center min-h-screen text-white p-4 overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/back5.jpeg')" }}
+      className="flex flex-col items-center justify-center min-h-screen text-white p-4 overflow-hidden bg-fixed bg-center bg-no-repeat"
+      style={{ 
+        backgroundImage: "url('/images/back5.jpeg')",
+        backgroundSize: "cover" // 🔥 Ensuring image properly fits
+      }}
     >
       {/* 🎊 Show Confetti when countdown is over */}
       {isCountdownOver && <Confetti width={width} height={height} />}
 
       {/* Hide the countdown heading when countdown is over */}
       {!isCountdownOver && (
-       <motion.h1
-       className="text-[#FC427B] text-4xl md:text-6xl font-bold mb-6 text-center 
-                  bg-pink-100 text-pink-600 px-6 py-3 rounded-lg shadow-lg inline-block"
-       initial={{ opacity: 0, y: -50 }}
-       animate={{ opacity: 1, y: 0 }}
-       transition={{ duration: 1 }}
-     >
-       THE COUNTDOWN HAS BEGUN 
-     </motion.h1>
-     
+        <motion.h1
+          className="text-[#FC427B] text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-center bg-pink-100 text-pink-600 px-4 py-2 md:px-6 md:py-3 rounded-lg shadow-lg inline-block"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          THE COUNTDOWN HAS BEGUN
+        </motion.h1>
       )}
 
       {/* Show countdown timer if time is left */}
       {timeLeft > 0 ? (
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mt-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
@@ -77,18 +78,18 @@ const CountdownTimer = () => {
           {[{ label: "Days", value: days }, { label: "Hours", value: hours }, { label: "Minutes", value: minutes }, { label: "Seconds", value: seconds }].map((item, index) => (
             <motion.div
               key={index}
-              className="bg-white text-pink-600 p-4 rounded-2xl shadow-lg w-24 md:w-32"
+              className="bg-white text-pink-600 p-4 rounded-2xl shadow-lg w-20 md:w-28 lg:w-32"
               whileHover={{ scale: 1.1 }}
             >
-              <p className="text-4xl font-bold">{item.value}</p>
-              <p className="text-sm">{item.label}</p>
+              <p className="text-3xl md:text-4xl font-bold">{item.value}</p>
+              <p className="text-xs md:text-sm">{item.label}</p>
             </motion.div>
           ))}
         </motion.div>
       ) : (
         // 🎉 Show birthday message when countdown ends
         <motion.div
-          className="text-4xl md:text-6xl font-bold mb-6 text-center font-extrabold text-[#f1c40f] mt-6"
+          className="text-3xl md:text-5xl lg:text-6xl font-bold text-center font-extrabold text-[#f1c40f] mt-6"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1.5 }}
           transition={{ duration: 1 }}
@@ -97,12 +98,12 @@ const CountdownTimer = () => {
         </motion.div>
       )}
 
-      {/* Button for Special Date (Enabled from March 13 onward) */}
+      {/* 🎁 Surprise Button (Enabled from March 13) */}
       <button
         className={`mt-6 px-6 py-3 font-bold rounded-xl shadow-md transition duration-300 ${
           isUnlocked
             ? "bg-yellow-400 text-black hover:bg-yellow-500"
-            : "bg-yellow-300 text-black-500 cursor-not-allowed"
+            : "bg-yellow-300 text-black cursor-not-allowed"
         }`}
         onClick={handleButtonClick}
         disabled={!isUnlocked} // Disable button until March 13

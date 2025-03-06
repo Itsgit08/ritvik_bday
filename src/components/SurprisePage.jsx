@@ -39,17 +39,18 @@ const SurpriseGrid = () => {
       ))}
 
       {/* Animated Button */}
-      <motion.div
-        className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        <Link to="/Gallery">
-          <button className="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white text-sm sm:text-lg font-bold rounded-full shadow-lg hover:shadow-xl transition-all">
-            Musical Gallery
-          </button>
-        </Link>
-      </motion.div>
+<motion.div
+  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 pb-4"
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.9 }}
+>
+  <Link to="/Gallery">
+    <button className="px-6 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white text-lg font-bold rounded-full shadow-lg hover:shadow-xl transition-all">
+      Musical Memories
+    </button>
+  </Link>
+</motion.div>
+
     </div>
   );
 };
