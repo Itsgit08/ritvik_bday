@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CountdownTimer from "./components/CountdownTimer";
+import CountdownTimer from "./components/CountDownTimer";
 import SurprisePage from "./components/SurprisePage";
 import PhotoGallery from "./components/PhotoGallery"; 
 import Note from "./components/Note"; 

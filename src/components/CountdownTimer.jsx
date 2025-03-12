@@ -12,7 +12,7 @@ const CountdownTimer = () => {
   const today = new Date();
   const [timeLeft, setTimeLeft] = useState(targetDate - Date.now());
   const [isCountdownOver, setIsCountdownOver] = useState(false);
-  const [isUnlocked, setIsUnlocked] = useState(today >= new Date("2025-03-13")); // Enable button from March 13 onward
+  const [isUnlocked, setIsUnlocked] = useState(today >= new Date("2025-03-12")); // Enable button from March 13 onward
 
   useEffect(() => {
     const timer = setInterval(() => {
